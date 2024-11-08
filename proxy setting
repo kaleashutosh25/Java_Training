@@ -1,0 +1,5 @@
+Set-DnsClientServerAddress -InterfaceAlias PROD -Verbose -ServerAddresses 198.19.240.2
+Set-DnsClientServerAddress -InterfaceAlias DEP -ResetServerAddresses
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyServer -Value "http://dc-proxy-rat.net.vodafone.com:8080"
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyOverride -Value "*.kabeldeutschland.de;*.viola.local;*.dxl-vf.de;*.coma-vf.de"
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyEnable -Value 1
